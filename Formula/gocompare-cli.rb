@@ -1,6 +1,12 @@
 class GocompareCli < Formula
-  desc "Native file and folder comparison CLI"
+  desc "Command-line file and folder comparison, merge and sync"
   homepage "https://github.com/jhzhang09/gocompare"
+  license "MIT"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   on_macos do
     if Hardware::CPU.arm?
@@ -23,10 +29,13 @@ class GocompareCli < Formula
   end
 
   def install
-    bin.install "gocompare-cli" => "gocompare"
+    bin.install "gocompare-cli"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gocompare --version")
+    assert_match version.to_s, shell_output("#{bin}/gocompare-cli --version")
+    (testpath/"a.txt").write "same\n"
+    (testpath/"b.txt").write "same\n"
+    system bin/"gocompare-cli", testpath/"a.txt", testpath/"b.txt"
   end
 end
