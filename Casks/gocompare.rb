@@ -9,12 +9,6 @@ cask "gocompare" do
 
   app "GoCompare.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/GoCompare.app"],
-                   sudo: false
-  end
-
   zap trash: [
     "~/Library/Application Support/GoCompare",
     "~/Library/Preferences/dev.gocompare.desktop.plist",
@@ -23,7 +17,11 @@ cask "gocompare" do
 
   caveats <<~EOS
     GoCompare is not notarized with an Apple Developer account.
-    If macOS warns on launch, you can right-click the app in Finder and select "Open", or run:
+    To avoid macOS Gatekeeper blocking the app, install with --no-quarantine:
+      brew install --cask --no-quarantine jhzhang09/tap/gocompare
+
+    If already installed and macOS blocks it, run:
       xattr -dr com.apple.quarantine "#{appdir}/GoCompare.app"
+    Or right-click the app in Finder and choose "Open".
   EOS
 end
