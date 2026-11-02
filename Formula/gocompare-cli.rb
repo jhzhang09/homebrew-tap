@@ -10,21 +10,21 @@ class GocompareCli < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.3/gocompare-cli_0.3.3_darwin_arm64.tar.gz"
-      sha256 "4457d1639676bd8581dd200a4ad05e5349326df80f2aecf25a6d931192443379"
+      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.4/gocompare-cli_0.3.4_darwin_arm64.tar.gz"
+      sha256 "f45bc57725867cbdd981b7b1b6f85d6abc2e818d16386490af9ccc61572e4aaf"
     else
-      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.3/gocompare-cli_0.3.3_darwin_amd64.tar.gz"
-      sha256 "b37750cb440ba3f542181b12636ff49c8b9c7df350a4702b5c75aa6392d5c672"
+      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.4/gocompare-cli_0.3.4_darwin_amd64.tar.gz"
+      sha256 "1337b5f2cb38860565e88bd1908695ab7b6020caf4465c68f51345faec4514ea"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.3/gocompare-cli_0.3.3_linux_arm64.tar.gz"
-      sha256 "e9ec0ae362a3e11e36102c3cc2f0097c61926aab3d251444e27d6e1c0ad018a7"
+      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.4/gocompare-cli_0.3.4_linux_arm64.tar.gz"
+      sha256 "1e7ded01da42835bbfffa962b2633e7e322f138fa27d18cc6f1c73365931ac2b"
     else
-      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.3/gocompare-cli_0.3.3_linux_amd64.tar.gz"
-      sha256 "836a4c7b90d0ed27236104a6248f655a7b4d8c690d11f334e81a8b6cbf20b32c"
+      url "https://github.com/jhzhang09/gocompare/releases/download/v0.3.4/gocompare-cli_0.3.4_linux_amd64.tar.gz"
+      sha256 "3dc2ad17fd81bae241c1fba26652c47a6a1f47d471b0a6662f371952bad8e3a9"
     end
   end
 
