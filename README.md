@@ -1,10 +1,12 @@
-# Homebrew Tap for GoCompare
+# Homebrew Tap (`jhzhang09/tap`)
 
-This is the official Homebrew Tap repository for [GoCompare](https://github.com/jhzhang09/gocompare), a native, cross-platform file and folder comparison tool written in Go.
+Official Homebrew Tap repository maintained by [@jhzhang09](https://github.com/jhzhang09).
 
-## Installation
+## Packages
 
-### 1. Desktop App (GUI)
+### 1. GoCompare Desktop App (GUI)
+
+Native, cross-platform file and folder comparison tool ([jhzhang09/gocompare](https://github.com/jhzhang09/gocompare)).
 
 Install via Homebrew Cask:
 
@@ -29,7 +31,7 @@ brew install --cask gocompare
 
 ---
 
-### 2. Command Line Tool (CLI)
+### 2. GoCompare Command Line Tool (CLI)
 
 Install via Homebrew Formula:
 
@@ -47,5 +49,30 @@ brew install gocompare-cli
 Verify the installation:
 
 ```bash
-gocompare --version
+gocompare-cli --version
 ```
+
+---
+
+### 3. TendyronTokenMac (`tendyron-token`)
+
+macOS native **CryptoTokenKit (CTK)** smart card extension, **CCID** driver, and management host app (`TendyronTokenHost.app`) for Tendyron OA Key (`VID 0x1780 / PID 0x0410`).
+
+Install via Homebrew Cask:
+
+```bash
+brew install --cask jhzhang09/tap/tendyron-token
+```
+
+Or tap first:
+
+```bash
+brew tap jhzhang09/tap
+brew install --cask tendyron-token
+```
+
+> **Architecture & macOS Selection:**
+> - **macOS 27.0+ (`arm64`)**: automatically installs `TendyronTokenMac-<version>-macos27-arm64.pkg`
+> - **macOS 12.0–26 (`arm64` / `x86_64`) or Intel Macs**: automatically installs `TendyronTokenMac-<version>-macos12-universal.pkg`
+>
+> The cask runs the macOS command-line `installer` and clears the quarantine attribute on `/Applications/TendyronTokenHost.app` after installation.
