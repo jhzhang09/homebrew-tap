@@ -39,7 +39,8 @@ cask "tendyron-token" do
 
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/TendyronTokenHost.app"]
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/TendyronTokenHost.app"],
+        sudo: true
   end
 
   uninstall quit:    "com.tendyron.oakey.host",
