@@ -1,16 +1,16 @@
 cask "tendyron-token" do
-  version "0.3.3"
+  version "0.4.0"
 
   on_arm do
     on_tahoe :or_older do
-      sha256 "d10bd9b7982c5b4e4b85e2f3ad87a2d726faaaf02f6a8b6f169b365551208361"
+      sha256 "8d5228a0a13db3c6df1c0a565d292f7c033bbb40a8512968223002f1f17e3977"
 
       url "https://github.com/jhzhang09/homebrew-tap/releases/download/tendyron-token-v#{version}/TendyronTokenMac-#{version}-macos12-universal.pkg"
 
       pkg "TendyronTokenMac-#{version}-macos12-universal.pkg"
     end
     on_golden_gate :or_newer do
-      sha256 "842e0151161bad6c5c38eb8049186d72ef77790cd955c813895ee4109b8991c3"
+      sha256 "e9d66491e19a92d08afb4642fd80f26fcae13e9be1a2ec71d742c8a68f0dd84e"
 
       url "https://github.com/jhzhang09/homebrew-tap/releases/download/tendyron-token-v#{version}/TendyronTokenMac-#{version}-macos27-arm64.pkg"
 
@@ -18,7 +18,7 @@ cask "tendyron-token" do
     end
   end
   on_intel do
-    sha256 "d10bd9b7982c5b4e4b85e2f3ad87a2d726faaaf02f6a8b6f169b365551208361"
+    sha256 "8d5228a0a13db3c6df1c0a565d292f7c033bbb40a8512968223002f1f17e3977"
 
     url "https://github.com/jhzhang09/homebrew-tap/releases/download/tendyron-token-v#{version}/TendyronTokenMac-#{version}-macos12-universal.pkg"
 
@@ -43,11 +43,21 @@ cask "tendyron-token" do
         sudo: true
   end
 
+  # pkgutil 卸载会按安装记录一并移除宿主内的 OA 桥接、扩展目录和系统级 Chrome 注册文件。
   uninstall quit:    "com.tendyron.oakey.host",
             pkgutil: "com.tendyron.oakey.installer"
 
   zap trash: [
+    "~/Library/Logs/Tendyron/OABridge",
     "~/Library/Preferences/com.tendyron.oakey.host.plist",
     "~/Library/Saved Application State/com.tendyron.oakey.host.savedState",
   ]
+
+  caveats <<~EOS
+    Chrome OA 登录助手需要手动加载一次：
+      打开 TendyronTokenHost 的“状态”页，按提示在 chrome://extensions 加载
+      /Applications/TendyronTokenHost.app/Contents/Resources/OAChromeExtension
+    每次 brew upgrade 后，请在 chrome://extensions 重新加载该扩展并刷新 OA 页面。
+    卸载后请在 Chrome 中移除该扩展。
+  EOS
 end
