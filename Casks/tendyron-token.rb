@@ -1,16 +1,16 @@
 cask "tendyron-token" do
-  version "0.4.3"
+  version "0.4.4"
 
   on_arm do
     on_tahoe :or_older do
-      sha256 "06575cec11470f5e2793b6dc3e23fede6c6280498f5bcb8cec3c931137717321"
+      sha256 "9eadf269517da09a90289ed520b3bb40e59cf1305b2cfcc1eaf479d13a4cbce8"
 
       url "https://github.com/jhzhang09/homebrew-tap/releases/download/tendyron-token-v#{version}/TendyronTokenMac-#{version}-macos12-universal.pkg"
 
       pkg "TendyronTokenMac-#{version}-macos12-universal.pkg"
     end
     on_golden_gate :or_newer do
-      sha256 "aacaea079e324a6f4cc78df4a1b83c5577873e9fa3f10bfffed0b12b2b4404d0"
+      sha256 "ea1a769a97900aca0aff3f73d7edbbab0017b989aecdeea241a795e54df2f982"
 
       url "https://github.com/jhzhang09/homebrew-tap/releases/download/tendyron-token-v#{version}/TendyronTokenMac-#{version}-macos27-arm64.pkg"
 
@@ -18,7 +18,7 @@ cask "tendyron-token" do
     end
   end
   on_intel do
-    sha256 "06575cec11470f5e2793b6dc3e23fede6c6280498f5bcb8cec3c931137717321"
+    sha256 "9eadf269517da09a90289ed520b3bb40e59cf1305b2cfcc1eaf479d13a4cbce8"
 
     url "https://github.com/jhzhang09/homebrew-tap/releases/download/tendyron-token-v#{version}/TendyronTokenMac-#{version}-macos12-universal.pkg"
 
