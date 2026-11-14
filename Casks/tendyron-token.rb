@@ -35,7 +35,7 @@ cask "tendyron-token" do
     strategy :git
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   postflight_steps do
     run "/usr/bin/xattr",
