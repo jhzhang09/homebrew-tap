@@ -1,6 +1,6 @@
 cask "gocompare" do
-  version "1.0.0"
-  sha256 "41959f88b685ec5f04d48fa1c0a52c583b53c2dff50e91fecf496bd047130ad4"
+  version "1.1.0"
+  sha256 "4cd9b2ceb52c6c09b6239ad90e074350ee702a0fc002dfa4c5d2781de9400988"
 
   url "https://github.com/jhzhang09/gocompare/releases/download/v#{version}/gocompare-#{version}.dmg"
   name "GoCompare"
