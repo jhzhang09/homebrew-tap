@@ -1,13 +1,13 @@
 cask "godwit" do
   arch arm: "arm64", intel: "amd64"
 
-  version "1.39.4-smime.1"
-  sha256 arm:   "04af581a928845509923892b9439e5e46f043a1e4e6f0d445665e8b8ddb22966",
-         intel: "d379c105a18a5fd3e17f950707aba381e7706d27aa9394ae2e185c6be81badeb"
+  version "1.39.4-smime.2"
+  sha256 arm:   "9a97e70d28ddb92cd15972ebb92fd98248416d59075801e6b3b9028cef8bee47",
+         intel: "990ef43677981af469e27c4ebb2fda625d94fcc62a00b3f1c539c2de1f7379ca"
 
   url "https://github.com/jhzhang09/godwit/releases/download/v#{version}/godwit-#{version}-#{arch}.dmg"
   name "Godwit"
-  desc "Open-source, AI-native desktop email client"
+  desc "Unofficial fork of Godwit email client with native S/MIME support"
   homepage "https://github.com/jhzhang09/godwit"
 
   livecheck do
