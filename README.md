@@ -113,3 +113,41 @@ brew upgrade --cask serval
 > xattr -dr com.apple.quarantine /Applications/Serval.app
 > ```
 > Or choose **System Settings → Privacy & Security → Open Anyway** after the first launch attempt.
+
+---
+
+### 5. Godwit (`godwit`)
+
+Open-source, AI-native desktop email client with native hardware-backed S/MIME support ([jhzhang09/godwit](https://github.com/jhzhang09/godwit)).
+
+Install via Homebrew Cask:
+
+```bash
+brew install --cask jhzhang09/tap/godwit
+```
+
+Or tap first:
+
+```bash
+brew tap jhzhang09/tap
+brew install --cask godwit
+```
+
+Upgrade to the latest release:
+
+```bash
+brew upgrade --cask godwit
+```
+
+> **Requirements & CLI:**
+> - Requires **macOS 12 (Monterey) or later** (separate native builds for Apple Silicon `arm64` and Intel `amd64`).
+> - Installs `/Applications/Godwit.app` and links the `godwit` command (`godwit mcp`, `godwit call`, `godwit --headless`) into Homebrew's `bin` directory.
+> - Also supports in-app self-updates signed with this fork's update key.
+
+> **macOS Gatekeeper Note:**
+> Releases are ad-hoc signed and not notarized with an Apple Developer account.
+> The cask automatically clears the quarantine attribute during installation. If macOS still blocks it on first launch, run:
+> ```bash
+> xattr -dr com.apple.quarantine /Applications/Godwit.app
+> ```
+> Or choose **System Settings → Privacy & Security → Open Anyway** after the first launch attempt.
