@@ -1,9 +1,9 @@
 cask "godwit" do
   arch arm: "arm64", intel: "amd64"
 
-  version "1.39.4-smime.3"
-  sha256 arm:   "ff1dd465b21080a968b0ccbd1ed2b1dc7a4407b628491a6e280bba6f575ae71e",
-         intel: "be5e60a952cd5d1956284aacf04675933838bd8f440c421e9749ff751bf196e2"
+  version "1.39.4-smime.4"
+  sha256 arm:   "a668f360da107d1bc2663ce8261c98d14e83114404539d2a2b52b44344d5224f",
+         intel: "aa86e9063e551846fdcdee8dc59df9e41bd37118bf0ad9f83a7f1a46e258e5c1"
 
   url "https://github.com/jhzhang09/godwit/releases/download/v#{version}/godwit-#{version}-#{arch}.dmg"
   name "Godwit"
