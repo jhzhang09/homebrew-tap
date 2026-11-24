@@ -1,6 +1,6 @@
 cask "serval" do
-  version "0.6.4"
-  sha256 "65c8c377034c1d7a8e85276156218416e232885cf8a46702e150a64201306e6d"
+  version "0.6.5"
+  sha256 "f82f767c5fb0372c6b79c26479b4544312d8e9712d880e3792670097827dccd2"
 
   url "https://github.com/jhzhang09/serval/releases/download/v#{version}/serval-#{version}.dmg"
   name "Serval"
